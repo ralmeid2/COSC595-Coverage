@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.75% </span>
+                <span class="strong">88.88% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>15/16</span>
+                <span class='fraction'>16/18</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">87.5% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>7/7</span>
+                <span class='fraction'>7/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.75% </span>
+                <span class="strong">88.88% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>15/16</span>
+                <span class='fraction'>16/18</span>
             </div>
         
             
@@ -172,7 +172,17 @@
 <a name='L107'></a><a href='#L107'>107</a>
 <a name='L108'></a><a href='#L108'>108</a>
 <a name='L109'></a><a href='#L109'>109</a>
-<a name='L110'></a><a href='#L110'>110</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -201,6 +211,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">50x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">50x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">50x</span>
@@ -281,6 +295,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import style from './AdminMenu.module.css'
 import { useNavigate } from 'react-router-dom'
 import { Button } from '..'
@@ -310,6 +330,10 @@ export default function AdminMenu() {
     }
     const goToDisplay = async () =&gt; {
         navigate('/')
+    }
+&nbsp;
+    const fullscreenOptions = <span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {
+<span class="cstat-no" title="statement not covered" >        navigate('/fullscreen')</span>
     }
 &nbsp;
     <span class="missing-if-branch" title="if path not taken" >I</span>if (window.location.pathname === '/admin'){
@@ -351,45 +375,51 @@ export default function AdminMenu() {
         )
     }else{
         return (
-            &lt;div&gt;
                 &lt;div className={style.buttonContainerAdmin}&gt;
-                    &lt;Button onClick={addDailyNotice}
-                        type="submit"
-                    &gt;
-                        Add Daily Notice
-                    &lt;/Button&gt;
-                    &lt;Button onClick={photoAdmin}
-                        type="submit"
-                    &gt;
-                        Add/Remove Photos
-                    &lt;/Button&gt;
-                    &lt;Button onClick={displayOptions}
-                        type="submit"
-                    &gt;
-                        Display Options
-                    &lt;/Button&gt;
-                    &lt;Button onClick={editDailyNotice}
-                        type="submit"
-                    &gt;
-                        Edit Daily Notice
-                    &lt;/Button&gt;
-                    &lt;Button onClick={deleteDailyNotice}
-                        type="submit"
-                    &gt;
-                        Delete Daily Notice
-                    &lt;/Button&gt;
-                    &lt;Button onClick={goToDisplay}
-                        type="submit"
-                    &gt;
-                        Go To Display
-                    &lt;/Button&gt;
+                    &lt;div className={style.buttonGroup}&gt;
+                        &lt;Button onClick={addDailyNotice}
+                                type="submit"
+                        &gt;
+                            Add Daily Notice
+                        &lt;/Button&gt;
+                        &lt;Button onClick={photoAdmin}
+                                type="submit"
+                        &gt;
+                            Add/Remove Photos
+                        &lt;/Button&gt;
+                        &lt;Button onClick={displayOptions}
+                                type="submit"
+                        &gt;
+                            Display Options
+                        &lt;/Button&gt;
+                        &lt;Button onClick={editDailyNotice}
+                                type="submit"
+                        &gt;
+                            Edit Daily Notice
+                        &lt;/Button&gt;
+                        &lt;Button onClick={deleteDailyNotice}
+                                type="submit"
+                        &gt;
+                            Delete Daily Notice
+                        &lt;/Button&gt;
+                    &lt;/div&gt;
+                    &lt;div className={style.buttonGroup}&gt;
+                        &lt;Button onClick={fullscreenOptions}
+                            type="submit"
+                        &gt;
+                            Choose Full-Screen View
+                        &lt;/Button&gt;
+                        &lt;Button onClick={goToDisplay}
+                            type="submit"
+                        &gt;
+                            Go To Main Display
+                        &lt;/Button&gt;
+                    &lt;/div&gt;
                 &lt;/div&gt;
-            &lt;/div&gt;
         )
     }
 &nbsp;
 }
-&nbsp;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -397,7 +427,7 @@ export default function AdminMenu() {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-02T03:37:15.577Z
+                at 2023-10-03T11:06:24.865Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
